@@ -1,0 +1,75 @@
+{
+    "players": [
+      {
+        "id": 1,
+        "name": "Lionel Messi",
+        "age": 36,
+        "position": "Forward",
+        "team": "Inter Miami",
+        "stats": {
+          "games_played": 25,
+          "goals_scored": 20,
+          "assists": 10,
+          "yellow_cards": 2,
+          "red_cards": 0
+        }
+      },
+      {
+        "id": 2,
+        "name": "Cristiano Ronaldo",
+        "age": 38,
+        "position": "Forward",
+        "team": "Al-Nassr",
+        "stats": {
+          "games_played": 30,
+          "goals_scored": 25,
+          "assists": 5,
+          "yellow_cards": 3,
+          "red_cards": 0
+        }
+      },
+      {
+        "id": 3,
+        "name": "Kevin De Bruyne",
+        "age": 32,
+        "position": "Midfielder",
+        "team": "Manchester City",
+        "stats": {
+          "games_played": 20,
+          "goals_scored": 5,
+          "assists": 18,
+          "yellow_cards": 1,
+          "red_cards": 0
+        }
+      },
+      {
+        "id": 4,
+        "name": "Virgil van Dijk",
+        "age": 32,
+        "position": "Defender",
+        "team": "Liverpool",
+        "stats": {
+          "games_played": 28,
+          "goals_scored": 3,
+          "assists": 1,
+          "yellow_cards": 2,
+          "red_cards": 0
+        }
+      },
+      {
+        "id": 5,
+        "name": "Marc-André ter Stegen",
+        "age": 31,
+        "position": "Goalkeeper",
+        "team": "Barcelona",
+        "stats": {
+          "games_played": 26,
+          "clean_sheets": 14,
+          "saves": 78,
+          "yellow_cards": 1,
+          "red_cards": 0
+        }
+      }
+    ]
+  }
+  
