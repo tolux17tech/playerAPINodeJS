@@ -1,5 +1,6 @@
 const fs = require('fs');
 const Player = require('../model/playersModel');
+const APIFeatures = require('../Utils/apiFeatures')
 
 const players = JSON.parse(fs.readFileSync(`${__dirname}/../data/players.json`, 'utf-8'));
 
@@ -10,78 +11,17 @@ exports.aliasTopPlayers = (req, res, next) => {
     next();
 
 }
-exports.checkId = (req, res, next, val) => {
-
-    // if (val > 1000) {
-    //     return res.status(404).json({ status: "invalid Id" })
-    // }
-
-    next();
-}
-
-exports.checkBody = (req, res, next) => {
-    const data = req.body;
-
-    // if (!data.key) {
-    //     return res.status(403).json({ status: "authorized" })
-    // }
-
-    next();
-}
-
-
 
 exports.getAllPlayers = async (req, res) => {
     try {
-        let newQuery = { ...req.query };
-
-        //Fields to exclude
-        const excludedQuery = ['sort', 'limit', 'fields', 'page'];
-        excludedQuery.forEach(field => delete newQuery[field])
-
-
-        //Advanced Filtering
-        let queryString = JSON.stringify(newQuery);
-        queryString = queryString.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`)
-
-        // Query
-        let data = Player.find(JSON.parse(queryString));
-
-        //Cherry Picking
-        if (req.query.fields) {
-            console.log(req.query.fields);
-            data.select(req.query.fields.split(',').join(' '))
-        }
-        //Sorting fields
-        if (req.query.sort) {
-
-            data = data.sort(req.query.sort.split(',').join(' '))
-        }
-        else {
-            data = data.sort('createdAt')
-        }
-
-        //Limiting the number of documents
-        if (req.query.limit) {
-            data = data.limit(req.query.limit)
-        }
-
-        //Pagination
-        const page = +req.query.page || 1;
-        const limit = +req.query.limit || 100;
-        const skip = (page - 1) * limit;
-
-        data = data.skip(skip).limit(limit);
-
-        if (req.query.page) {
-            const numPlayers = await Player.countDocuments();
-            if ((skip) >= numPlayers) {
-                throw new Error('Limit your search by asking for only few pages')
-            }
-        }
+        let features = new APIFeatures(Player.find(), req.query)
+            .filter()
+            .selectFields()
+            .sort()
+            .pagination();
 
         //Final Data
-        const players = await data;
+        const players = await features.query;
 
         res.status(200).json({
             status: 'success',
