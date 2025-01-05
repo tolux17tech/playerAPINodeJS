@@ -47,6 +47,6 @@ const deletePlayers = async function () {
 if (process.argv[2] === "--import") {
     uploadPlayers()
 }
-else {
+else if (process.argv[2] === "--delete") {
     deletePlayers();
 }
