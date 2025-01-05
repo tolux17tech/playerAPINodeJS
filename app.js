@@ -15,6 +15,8 @@ app.use("/api/app/players", playerRouter);
 
 
 
+const DB_URI = process.env.URI.replace('<PASSWORD>', process.env.PASSWORD);
+
 
 
 

@@ -1,75 +1,197 @@
-{
-    "players": [
-      {
-        "id": 1,
-        "name": "Lionel Messi",
-        "age": 36,
-        "position": "Forward",
-        "team": "Inter Miami",
-        "stats": {
-          "games_played": 25,
-          "goals_scored": 20,
-          "assists": 10,
-          "yellow_cards": 2,
-          "red_cards": 0
-        }
-      },
-      {
-        "id": 2,
-        "name": "Cristiano Ronaldo",
-        "age": 38,
-        "position": "Forward",
-        "team": "Al-Nassr",
-        "stats": {
-          "games_played": 30,
-          "goals_scored": 25,
-          "assists": 5,
-          "yellow_cards": 3,
-          "red_cards": 0
-        }
-      },
-      {
-        "id": 3,
-        "name": "Kevin De Bruyne",
-        "age": 32,
-        "position": "Midfielder",
-        "team": "Manchester City",
-        "stats": {
-          "games_played": 20,
-          "goals_scored": 5,
-          "assists": 18,
-          "yellow_cards": 1,
-          "red_cards": 0
-        }
-      },
-      {
-        "id": 4,
-        "name": "Virgil van Dijk",
-        "age": 32,
-        "position": "Defender",
-        "team": "Liverpool",
-        "stats": {
-          "games_played": 28,
-          "goals_scored": 3,
-          "assists": 1,
-          "yellow_cards": 2,
-          "red_cards": 0
-        }
-      },
-      {
-        "id": 5,
-        "name": "Marc-André ter Stegen",
-        "age": 31,
-        "position": "Goalkeeper",
-        "team": "Barcelona",
-        "stats": {
-          "games_played": 26,
-          "clean_sheets": 14,
-          "saves": 78,
-          "yellow_cards": 1,
-          "red_cards": 0
-        }
-      }
-    ]
+[
+  {
+    "name": "Lionel Messi",
+    "position": ["FORWARD", "ATTACKING MIDFIELDER"],
+    "currentTeam": "Inter Miami CF",
+    "formerTeams": ["Barcelona", "Paris Saint-Germain"],
+    "country": "Argentina",
+    "email": "lionel.messi@example.com",
+    "salary": 42000000,
+    "createdAt": "2025-01-04T12:00:00Z",
+    "rating": 9.8,
+    "numberOfGoals": 800,
+    "images": ["messi1.jpg", "messi2.jpg"]
+  },
+  {
+    "name": "Cristiano Ronaldo",
+    "position": ["FORWARD", "WINGER"],
+    "currentTeam": "Al-Nassr",
+    "formerTeams": ["Manchester United", "Real Madrid", "Juventus"],
+    "country": "Portugal",
+    "email": "cristiano.ronaldo@example.com",
+    "salary": 50000000,
+    "createdAt": "2025-01-03T15:30:00Z",
+    "rating": 9.7,
+    "numberOfGoals": 850,
+    "images": ["ronaldo1.jpg", "ronaldo2.jpg"]
+  },
+  {
+    "name": "Neymar Jr",
+    "position": ["FORWARD", "WINGER"],
+    "currentTeam": "Al-Hilal",
+    "formerTeams": ["Santos", "Barcelona", "Paris Saint-Germain"],
+    "country": "Brazil",
+    "email": "neymar.jr@example.com",
+    "salary": 37000000,
+    "createdAt": "2025-01-01T10:45:00Z",
+    "rating": 9.5,
+    "numberOfGoals": 420,
+    "images": ["neymar1.jpg", "neymar2.jpg"]
+  },
+  {
+    "name": "Kylian Mbappé",
+    "position": ["FORWARD", "WINGER"],
+    "currentTeam": "Paris Saint-Germain",
+    "formerTeams": ["Monaco"],
+    "country": "France",
+    "email": "kylian.mbappe@example.com",
+    "salary": 60000000,
+    "createdAt": "2025-01-04T09:15:00Z",
+    "rating": 9.6,
+    "numberOfGoals": 250,
+    "images": ["mbappe1.jpg", "mbappe2.jpg"]
+  },
+  {
+    "name": "Kevin De Bruyne",
+    "position": ["MIDFIELDER"],
+    "currentTeam": "Manchester City",
+    "formerTeams": ["Chelsea", "Wolfsburg", "Genk"],
+    "country": "Belgium",
+    "email": "kevin.debruyne@example.com",
+    "salary": 25000000,
+    "createdAt": "2025-01-02T14:20:00Z",
+    "rating": 9.4,
+    "numberOfGoals": 100,
+    "images": ["debruyne1.jpg", "debruyne2.jpg"]
+  },
+  {
+    "name": "Robert Lewandowski",
+    "position": ["FORWARD"],
+    "currentTeam": "Barcelona",
+    "formerTeams": ["Bayern Munich", "Borussia Dortmund"],
+    "country": "Poland",
+    "email": "robert.lewandowski@example.com",
+    "salary": 35000000,
+    "createdAt": "2025-01-01T18:00:00Z",
+    "rating": 9.6,
+    "numberOfGoals": 550,
+    "images": ["lewandowski1.jpg", "lewandowski2.jpg"]
+  },
+  {
+    "name": "Virgil van Dijk",
+    "position": ["DEFENDER"],
+    "currentTeam": "Liverpool",
+    "formerTeams": ["Southampton", "Celtic"],
+    "country": "Netherlands",
+    "email": "virgil.vandijk@example.com",
+    "salary": 20000000,
+    "createdAt": "2025-01-04T11:45:00Z",
+    "rating": 9.2,
+    "numberOfGoals": 30,
+    "images": ["vandijk1.jpg", "vandijk2.jpg"]
+  },
+  {
+    "name": "Mohamed Salah",
+    "position": ["FORWARD", "WINGER"],
+    "currentTeam": "Liverpool",
+    "formerTeams": ["Chelsea", "AS Roma", "Fiorentina"],
+    "country": "Egypt",
+    "email": "mohamed.salah@example.com",
+    "salary": 30000000,
+    "createdAt": "2025-01-03T20:00:00Z",
+    "rating": 9.5,
+    "numberOfGoals": 270,
+    "images": ["salah1.jpg", "salah2.jpg"]
+  },
+  {
+    "name": "Sadio Mané",
+    "position": ["FORWARD", "WINGER"],
+    "currentTeam": "Al-Nassr",
+    "formerTeams": ["Liverpool", "Southampton", "Red Bull Salzburg"],
+    "country": "Senegal",
+    "email": "sadio.mane@example.com",
+    "salary": 20000000,
+    "createdAt": "2025-01-03T17:30:00Z",
+    "rating": 9.3,
+    "numberOfGoals": 210,
+    "images": ["mane1.jpg", "mane2.jpg"]
+  },
+  {
+    "name": "Erling Haaland",
+    "position": ["FORWARD"],
+    "currentTeam": "Manchester City",
+    "formerTeams": ["Borussia Dortmund", "Red Bull Salzburg"],
+    "country": "Norway",
+    "email": "erling.haaland@example.com",
+    "salary": 45000000,
+    "createdAt": "2025-01-04T10:15:00Z",
+    "rating": 9.7,
+    "numberOfGoals": 150,
+    "images": ["haaland1.jpg", "haaland2.jpg"]
+  },
+  {
+    "name": "Karim Benzema",
+    "position": ["FORWARD"],
+    "currentTeam": "Al-Ittihad",
+    "formerTeams": ["Real Madrid", "Lyon"],
+    "country": "France",
+    "email": "karim.benzema@example.com",
+    "salary": 40000000,
+    "createdAt": "2025-01-02T09:30:00Z",
+    "rating": 9.4,
+    "numberOfGoals": 300,
+    "images": ["benzema1.jpg", "benzema2.jpg"]
+  },
+  {
+    "name": "Luka Modric",
+    "position": ["MIDFIELDER"],
+    "currentTeam": "Real Madrid",
+    "formerTeams": ["Tottenham Hotspur", "Dinamo Zagreb"],
+    "country": "Croatia",
+    "email": "luka.modric@example.com",
+    "salary": 20000000,
+    "createdAt": "2025-01-02T08:45:00Z",
+    "rating": 9.5,
+    "numberOfGoals": 50,
+    "images": ["modric1.jpg", "modric2.jpg"]
+  },
+  {
+    "name": "Harry Kane",
+    "position": ["FORWARD"],
+    "currentTeam": "Bayern Munich",
+    "formerTeams": ["Tottenham Hotspur"],
+    "country": "England",
+    "email": "harry.kane@example.com",
+    "salary": 30000000,
+    "createdAt": "2025-01-03T12:00:00Z",
+    "rating": 9.5,
+    "numberOfGoals": 200,
+    "images": ["kane1.jpg", "kane2.jpg"]
+  },
+  {
+    "name": "Thibaut Courtois",
+    "position": ["GOALKEEPER"],
+    "currentTeam": "Real Madrid",
+    "formerTeams": ["Chelsea", "Atletico Madrid"],
+    "country": "Belgium",
+    "email": "thibaut.courtois@example.com",
+    "salary": 15000000,
+    "createdAt": "2025-01-01T16:00:00Z",
+    "rating": 9.4,
+    "numberOfGoals": 0,
+    "images": ["courtois1.jpg", "courtois2.jpg"]
+  },
+  {
+    "name": "Jan Oblak",
+    "position": ["GOALKEEPER"],
+    "currentTeam": "Atletico Madrid",
+    "formerTeams": ["Benfica"],
+    "country": "Slovenia",
+    "email": "jan.oblak@example.com",
+    "salary": 14000000,
+    "createdAt": "2025-01-03T08:30:00Z",
+    "rating": 9.3,
+    "numberOfGoals": 0,
+    "images": ["oblak1.jpg", "oblak2.jpg"]
   }
-  
+]
