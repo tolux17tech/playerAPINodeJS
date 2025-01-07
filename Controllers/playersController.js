@@ -1,5 +1,6 @@
 const fs = require('fs');
 const Player = require('../model/playersModel');
+const APIFeatures = require('../utils/APIFeatures');
 
 const players = JSON.parse(fs.readFileSync(`${__dirname}/../data/players.json`, 'utf-8'));
 
@@ -14,7 +15,7 @@ exports.checkId = (req, res, next, val) => {
 }
 
 exports.checkBody = (req, res, next) => {
-    const data = req.body;
+
 
     // if (!data.key) {
     //     return res.status(403).json({ status: "authorized" })
@@ -23,15 +24,34 @@ exports.checkBody = (req, res, next) => {
     next();
 }
 
+
+exports.topScorers = (req, res, next) => {
+    req.query.fields = "name,numberOfGoals,salary";
+    req.query.sort = "-numberOfGoals";
+    req.query.page = 1;
+    req.query.limit = 5;
+    next();
+}
+
+exports.topRated = (req, res, next) => {
+    req.query.fields = "name,rating,salary";
+    req.query.sort = "-rating";
+    req.query.page = 1;
+    req.query.limit = 5;
+    next();
+}
+
 exports.getAllPlayers = async (req, res) => {
     try {
-        const data = await Player.find();
+
+        const features = new APIFeatures(Player.find(), req.query).filter().sort().paginate().selectFields();
+        const players = await features.query;
 
         res.status(200).json({
             status: 'success',
-            results: data.length,
+            results: players.length,
             data: {
-                data
+                players
             }
         })
     } catch (error) {

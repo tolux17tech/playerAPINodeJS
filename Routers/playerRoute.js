@@ -5,6 +5,12 @@ const playerRouter = express.Router();
 
 playerRouter.param("id", playerController.checkId)
 
+playerRouter.route("/highest-goals")
+    .get(playerController.topScorers, playerController.getAllPlayers);
+
+playerRouter.route("/top-rated")
+    .get(playerController.topRated, playerController.getAllPlayers);
+
 playerRouter.route("/")
     .get(playerController.getAllPlayers)
     .post(playerController.checkBody, playerController.addPlayer);
